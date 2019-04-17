@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tela do Professor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+        <style>
+            .button {
+                background-color: #0489B1; /* AquaBlue */
+                border: 2px solid FFFFFF; /* Black */
+                border-radius: 12px;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: block;
+                font-size: 16px; 
+                top: 50%;
+                left: 50%;
+                position: relative;
+                margin-right: -50%;
+                transform: translate(-50%, -50%)
+            }
+            .button2 {
+                background-color: #0489B1; /* AquaBlue */
+                border: 2px solid FFFFFF; /* Black */
+                border-radius: 12px;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+                position: relative;
+                //display: block;
+                //top: 50%;
+                //left: 50%;
+                //margin-right: -50%;
+                //transform: translate(-50%, -50%)
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        
+        
+        <!-- NAVBAR -->
+        <div>
+            <header>
+                <nav class="navbar nav-pills navbar-dark bg-dark">
+                    <span class="mb-0 h1" style="color: white">Jogo da Memória</span>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-outline-info"  onclick="location.href = 'Menu_Professor.html'">
+                                Início
+                            </button>
+                        </li>
+                </nav>
+            </header>
+        </div>
+        <!-- FIM NAVBAR -->
+        
+        <!--<h1>Memory Game</h1>btn btn-outline-info-->
+
+        <div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div>
+        
+  
+        
+
+
+        <!-- Botão para acionar modal -->
+        <button type="button" class="button" data-toggle="modal" data-target="#CriarSala">
+            +Novo Jogo
+        </button>
+        <button class="button" onclick="location.href = 'Dashboard_Professor.html'">-Histórico de Jogos</button>
+        <button class="button" onclick="location.href = 'Lista_de_Perguntas.html'">Criar Lista de Perguntas</button>
+
+
+
+
+        <!-- Modal Criar Sala -->
+        <div class="modal fade" id="CriarSala" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="TituloModalCentralizado">Nova Sala</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Formulario de Criação de sala -->
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Nº de Grupos:</label>
+                                <select class="form-control">
+                                    <option>Escolha a quantidade de Grupos</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Lista de Perguntas:</label>
+                                <select class="form-control">
+                                    <option>Escolha a Lista</option>
+                                    <option>Lista 1 HTML</option>
+                                    <option>Lista 2 CSS</option>
+                                    <option>Lista 3 JS</option>
+                                    <option>Lista 4 Perguntas Gerais</option>
+
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="button2" data-toggle="modal" data-target="#EsperadeGrupos">Criar Sala</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Espera de Grupos -->
+
+        <div class="modal fade" id="EsperadeGrupos" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="TituloModalCentralizado">Sala #xxx</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Esperando...
+                        <br>
+                        Grupos 3/4
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="button2">Iniciar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+</html>
